@@ -1,7 +1,25 @@
-<h2>  <%= pub.title %></h2>
-<img src='<%= pub.url %>' alt='<%= pub.title %>' />
+<h2 id="pub-title"> <%= pub.title %></h2>
+<div class="columns">
+  <div class="column is-half">
+    <img src='<%= pub.url %>' alt='<%= pub.title %>' />
+    <h5><%= pub.creator.username %></h5>
+  </div>
+  <div class="column is-half">
+    <h5>Description</h5>
+    <ul>
+      <li><%= pub.location %></li>
+      <li><%= pub.description %></li>
+    </ul>
 
-<form class="" action="pubs/<%= pub.id%>/comments" method="post">
-  <textarea name="content" rows="8" cols="80"></textarea>
-  <button name="button">Post a Review</button>
-</form>
+    <h5>Reviews</h5>
+    <form class="" action="/pubs/<%= pub.id %>/comment" method="POST">
+      <textarea name="content" rows="8" cols="80"></textarea>
+      <button name="button">Post a review</button>
+    </form>
+    <a href="/pubs/<%= pub.id %>/edit">Edit</a>
+    <form class="" action="/pubs/<%= pub.id %>/" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <button name="button">Delete</button>
+    </form>
+    </div>
+  </div>
