@@ -1,0 +1,46 @@
+<h2>All Pubs</h2>
+<ul>
+
+
+<% pubs.forEach( pub =>{ %>
+  <li>
+  <a href='/pubs/<%= pub.id %>'><%= pub.title %></a>
+    <img style="max-width: 200px " src='<%= pub.url %>' alt='<%= pub.title %>' />
+    <% if(pub.creator){%>
+      <%= pub.creator.username %>
+    <% } %>
+  </li>
+<% }) %>
+</ul>
+
+<% if(locals.isLoggedIn){ %>
+<h2>My Pubs</h2>
+<%= locals.user %>
+<ul>
+<% locals.user.pubs.forEach( pub =>{ %>
+  <li>
+    <%= pub.title %>
+    <img style="max-width: 200px " src='<%= pub.url %>' alt='<%= pub.title %>' />
+    <% if(pub.creator){%>
+      <%= pub.creator.username %>
+    <% } %>
+  </li>
+<% }) %>
+</ul>
+<% } %>
+
+<% if(locals.isLandlord){ %>
+<h2>My Pubs</h2>
+<%= locals.user %>
+<ul>
+<% locals.user.pubs.forEach( pub =>{ %>
+  <li>
+    <%= pub.title %>
+    <img style="max-width: 200px " src='<%= pub.url %>' alt='<%= pub.title %>' />
+    <% if(pub.creator){%>
+      <%= pub.creator.username %>
+    <% } %>
+  </li>
+<% }) %>
+</ul>
+<% } %>

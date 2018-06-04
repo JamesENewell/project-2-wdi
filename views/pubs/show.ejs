@@ -1,0 +1,7 @@
+<h2>  <%= pub.title %></h2>
+<img src='<%= pub.url %>' alt='<%= pub.title %>' />
+
+<form class="" action="pubs/<%= pub.id%>/comments" method="post">
+  <textarea name="content" rows="8" cols="80"></textarea>
+  <button name="button">Post a Review</button>
+</form>
