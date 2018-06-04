@@ -5,13 +5,14 @@ const commentSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 });
 
-
-
 const pubSchema = new mongoose.Schema({
   title: String,
-  url: String,
+  description: String,
+  image: String,
   creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
   comments: [commentSchema]
 });
 
-module.exports = mongoose.model('Pub', pubSchema);
+
+module.exports = mongoose.model('pub', pubSchema);
+module.exports = mongoose.model('comment', commentSchema);

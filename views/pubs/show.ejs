@@ -2,7 +2,6 @@
 <div class="columns">
   <div class="column is-half">
     <img src='<%= pub.url %>' alt='<%= pub.title %>' />
-    <h5><%= pub.creator.username %></h5>
   </div>
   <div class="column is-half">
     <h5>Description</h5>
@@ -10,7 +9,6 @@
       <li><%= pub.location %></li>
       <li><%= pub.description %></li>
     </ul>
-
     <h5>Reviews</h5>
     <form class="" action="/pubs/<%= pub.id %>/comment" method="POST">
       <textarea name="content" rows="8" cols="80"></textarea>
