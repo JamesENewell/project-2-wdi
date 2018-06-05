@@ -1,15 +1,26 @@
 <h2>All Pubs</h2>
-<ul class="columns">
-  <% pubs.forEach( pub =>{ %>
-    <ul class=" column is-one-half">
-      <li >
-        <a href="/pubs/<%= pub.id %>"><%= pub.title %></a>
-        <img style="height: 200px;" src='<%= pub.url %>' alt='<%= pub.title %>' />
-      </li>
-      <li>
-      <% if(pub.creator){%>
-        Added by <%= pub.creator.username %>
-        <% } %>
-      </li>
-    </ul>
-  <% }) %>
+  <div class="columns">
+    <% pubs.forEach( pub => { %>
+      <div class="column is-one-third-desktop is-half-tablet">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="<%= pub.image %>" alt="<%= pub.name %>">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <h4 class="title is-4">
+                <a href ="/pubs/<%= pub._id %>">
+                <%= pub.title %>
+                </a>
+              </h4>
+              <h6 class="subtitle is-6"><%= pub.location%></h6>
+              <h6 class="subtitle is-6"><%= pub.description%></h6>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>

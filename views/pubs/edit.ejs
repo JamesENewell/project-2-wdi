@@ -1,11 +1,22 @@
 <form action="/pubs/<%= pub.id %>" method="POST">
     <input type="hidden" name="_method" value="PUT">
     <div>
-        <label for="title">Title</label>
+        <label class="title">Pub Name</label>
         <input type="text" name="title" id="title" value="<%= pub.title %>">
     </div>
     <div>
-        <label for="url">Url</label>
-        <input type="url" name="url" id="url"  value="<%= pub.url %>">
+        <label class="location">Pub Location</label>
+        <input type="text" name="text" id="pub location"  value="<%= pub.location %>">
+    </div>
+    <div>
+        <label class="description">Pub Description</label>
+        <input type="text" name="description" id=""  value="<%= pub.description %>">
+    </div>
+    <div>
+        <label class="picture">Pub Picture</label>
+        <input type="text" name="picture" id=""  value="<%= pub.image %>">
+    </div>
+    <div>
+      <button name="button">Submit</button>
     </div>
 </form>

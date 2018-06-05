@@ -1,4 +1,4 @@
-const Pub = require('../models/pub.js');
+const Pub = require('../models/pub');
 
 
 function indexRoute(req, res){
@@ -7,6 +7,7 @@ function indexRoute(req, res){
     .populate('creator')
     .exec()
     .then( pubs =>{
+      console.log(pubs);
       res.render('pubs/index', {pubs});
     });
 }
@@ -23,12 +24,15 @@ function newRoute(req, res){
   res.render('pubs/new');
 }
 function createRoute(req, res){
+  // console.log(req.body);
   const pubData = req.body;
+  // console.log(req.body);
   pubData['creator'] = res.locals.user.id;
-  console.log(pubData);
+  // console.log(pubData);
   Pub
-    .create(req.body)
+    .create(pubData)
     .then( pub =>{
+      console.log(pub);
       return res.redirect(`/pubs/${pub.id}`);
     });
 }
@@ -38,6 +42,7 @@ function editRoute(req, res){
     .exec()
     .then( pub =>{
       res.render('pubs/edit', {pub});
+      console.log(pub);
     });
 }
 function updateRoute(req, res){

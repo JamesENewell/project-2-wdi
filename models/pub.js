@@ -8,11 +8,12 @@ const commentSchema = new mongoose.Schema({
 const pubSchema = new mongoose.Schema({
   title: String,
   description: String,
+  location: String,
   image: String,
   creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
   comments: [commentSchema]
 });
 
 
-module.exports = mongoose.model('pub', pubSchema);
-module.exports = mongoose.model('comment', commentSchema);
+module.exports = mongoose.model('Pub', pubSchema);
+// module.exports = mongoose.model('Comment', commentSchema);
