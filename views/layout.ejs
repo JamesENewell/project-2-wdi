@@ -8,15 +8,12 @@
 </head>
 <body>
   <%- include ./partials/_navbar %>
-
   <div class="top-bar">
     <div class="top-bar-left">
       <ul class="dropdown menu" data-dropdown-menu>
-        <% if(locals.isLoggedIn){%>
+        <% if(locals.isLoggedIn){ %>
             <li>Hi <%= locals.user.username %></li>
         <%} else {%>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/register">Sign up</a></li>
         <% } %>
       </ul>
     </div>
