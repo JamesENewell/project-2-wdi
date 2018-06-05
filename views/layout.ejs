@@ -4,18 +4,16 @@
   <meta charset="utf-8">
   <title>PubReviewer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
-  <link rel="stylesheet" href="./public/css/style.css">
+  <link type="text/css" rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+  <%- include ./partials/_navbar %>
+
   <div class="top-bar">
     <div class="top-bar-left">
       <ul class="dropdown menu" data-dropdown-menu>
         <% if(locals.isLoggedIn){%>
             <li>Hi <%= locals.user.username %></li>
-            <li><a href="/logout">Logout</a></li>
-            <li><a href="/pubs">Pubs</a> </li>
-            <% if(locals.isLandlord)%>
-            <li><a href="/pubs/new">Add a new Pub</a> </li>
         <%} else {%>
             <li><a href="/login">Login</a></li>
             <li><a href="/register">Sign up</a></li>

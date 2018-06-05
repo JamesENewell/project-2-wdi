@@ -1,7 +1,9 @@
-* {
-  border: 1px solid black; }
-
 div.top-bar {
-  background-color: mustardYellow; }
+  background-color: darkkhaki;
+  padding: 20px;
+  text-decoration: underline; }
+
+div.top-bar li {
+  padding: 0, 30px; }
 
 /*# sourceMappingURL=style.css.map */

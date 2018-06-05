@@ -63,12 +63,15 @@ function deleteRoute(req, res){
 }
 
 function createCommentRoute(req, res){
-  Pub.
-    findById(req.params.id)
+  Pub
+    .findById(req.params.id)
     .exec()
-    .then(pub =>{
-      pub.comments.create(req.body);
-      return res.redirect(`/pubs/${pub.id}`);
+    .then( pub => {
+      const commentData = req.body;
+      commentData.user = res.locals.user.id;
+      pub.comments.push(commentData);
+      pub.save();
+      return res. redirect(`/pubs/${pub.id}`);
     });
 }
 

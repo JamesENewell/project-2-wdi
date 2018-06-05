@@ -36,6 +36,4 @@ router.route('/pubs/:id/edit')
 router.route('/pubs/:id/comment')
   .post(pubs.createComment);
 
-
-
 module.exports = router;
