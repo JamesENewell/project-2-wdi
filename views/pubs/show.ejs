@@ -10,12 +10,14 @@
     <li><%= pub.location %></li>
     <h5>Description</h5>
     <li><%= pub.description %></li>
+    <li><%= pub.comments %></li>
     </ul>
 
     <h5>Reviews</h5>
-    <form class="" action="/pubs/<%= pub.id %>/comment" method="POST">
+      <form class="" action="/pubs/<%= pub.id %>/comment" method="POST">
       <textarea name="content" rows="8" cols="80"></textarea>
       <button name="button">Post a review</button>
     </form>
+
     </div>
   </div>

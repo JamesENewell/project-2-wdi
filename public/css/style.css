@@ -6,4 +6,8 @@ div.top-bar {
 div.column {
   padding: 30px; }
 
+#pub-title {
+  padding-left: 20px;
+  font-size: 50px; }
+
 /*# sourceMappingURL=style.css.map */
