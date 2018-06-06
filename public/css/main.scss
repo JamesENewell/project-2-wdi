@@ -46,6 +46,7 @@ img.pubImage {
 
 .navbar-item {
   float: center;
+  text-align: justify;
 
 }
 
@@ -67,10 +68,11 @@ img.image.is-200x150 {
   width: 150px;
 }
 
-div.homeImage {
+.homeImage {
+  height: 1000px;
+  background-image: url(https://www.visit-hampshire.co.uk/imageresizer/?image=%2Fdbimgs%2FPubs%20Banner%203.jpg&action=LargeImageGallery);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  // background-image: url(http://www.oxfordtimes.co.uk/resources/images/4122885.jpg?display=1&htype=0&type=responsive-gallery);
   // background-size: cover;
 }

@@ -16,12 +16,14 @@
 
   <div class="navbar-menu" id="navMenu">
     <div class="navbar-end">
-
+      <% if(locals.isLoggedIn){ %>
       <a href="/pubs" class="navbar-item">All Pubs</a>
       <a href="/pubs/new" class="navbar-item">Add a pub</a>
       <a href="/logout" class="navbar-item">Logout</a>
+      <%} else {%>
       <a href="/login" class="navbar-item">Login</a>
       <a href="/register" class="navbar-item">Register</a>
+      <% } %>
 
     </div>
   </div>

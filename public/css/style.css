@@ -35,7 +35,8 @@ img.pubImage {
   border: 1px solid black; }
 
 .navbar-item {
-  float: center; }
+  float: center;
+  text-align: justify; }
 
 .top-bar {
   text-align: center; }
@@ -51,7 +52,9 @@ img.image.is-200x150 {
   height: 400px;
   width: 150px; }
 
-div.homeImage {
+.homeImage {
+  height: 1000px;
+  background-image: url(https://www.visit-hampshire.co.uk/imageresizer/?image=%2Fdbimgs%2FPubs%20Banner%203.jpg&action=LargeImageGallery);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; }
