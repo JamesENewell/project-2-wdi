@@ -5,21 +5,27 @@
   <title>PubReviewer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
   <link type="text/css" rel="stylesheet" href="/css/style.css">
+  <script src="/js/app.js" charset="utf-8"></script>
 </head>
 <body>
   <%- include ./partials/_navbar %>
-  <div class="top-bar">
-    <div class="top-bar-left">
-      <ul class="dropdown menu" data-dropdown-menu>
-        <% if(locals.isLoggedIn){ %>
-            <li>Hi <%= locals.user.username %></li>
-        <%} else {%>
-        <% } %>
-      </ul>
-    </div>
-  </div>
-  <main class="row">
-    <%- body %>
-  </main>
-</body>
+  <div class="columns">
+    <div class="column">
+      <div class="top-bar">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <% if(locals.isLoggedIn){ %>
+            <li>Hi <%= locals.user.username %> Welcome to PubReviewer</li>
+            <%} else {%>
+              <% } %>
+            </ul>
+          </div>
+          <main class="row">
+            <%- body %>
+          </main>
+          <div id="homeImage" style="background-image:url(http://www.oxfordtimes.co.uk/resources/images/4122885.jpg?display=1&htype=0&type=responsive-gallery)">
+</div>
+
+        </div>
+      </div>
+    </body>
 </html>

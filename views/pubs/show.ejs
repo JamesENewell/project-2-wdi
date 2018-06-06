@@ -1,7 +1,7 @@
 <h2 id="pub-title"> <%= pub.title %></h2>
 <div class="columns">
   <div class="column is-half">
-    <img src='<%= pub.image %>' alt='<%= pub.title %>' />
+    <img class="pubImage" src='<%= pub.image %>' alt='<%= pub.title %>' />
   </div>
   <div class="column is-half">
     <a href="/pubs/<%= pub.id %>/edit">Edit</a>
@@ -10,12 +10,15 @@
     <li><%= pub.location %></li>
     <h5>Description</h5>
     <li><%= pub.description %></li>
-    <li><%= pub.comments %></li>
-    </ul>
-
     <h5>Reviews</h5>
-      <form class="" action="/pubs/<%= pub.id %>/comment" method="POST">
-      <textarea name="content" rows="8" cols="80"></textarea>
+    <ul>
+    <% pub.comments.forEach((comment) => { %>
+      <li><%= locals.user.username %>: <%= comment.content %></li>
+    <% }) %>
+  </ul>
+    </ul>
+      <form class="reviewForm" action="/pubs/<%= pub.id %>/comment" method="POST">
+      <textarea name="content" rows="8" cols="60"></textarea>
       <button name="button">Post a review</button>
     </form>
 
