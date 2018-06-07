@@ -8,7 +8,7 @@ For our second project, we were given a week to design and build a full stack Ap
 
 ###### PubReviewer
 
-The full stack Application I chose to make is a website that reviews pubs. You can sign up for an account and add a pub with name, location and a brief description
+The full stack Application I chose to make is a website that reviews pubs. You can sign up for an account and add a pub with name, location and a brief description.
 
 
 <img src="" width="700">
@@ -26,8 +26,6 @@ The full stack Application I chose to make is a website that reviews pubs. You c
 ######
 
 <img src="" width="700">
-
-
 
 ###### What was a win
 
