@@ -36,4 +36,4 @@ The full stack Application I chose to make is a website that reviews pubs. You c
 ###### What would I do differently
 
 ###### What additional features would I add
-I will aim to include the ability
+I will aim to include the ability to differentiate between a landlord who can add a pub but not review and a user who will be able to review pubs but not add them themselves
