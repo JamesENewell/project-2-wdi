@@ -1,9 +1,11 @@
 <h2 id="pub-title"> <%= pub.title %></h2>
-<div class="columns is-mobile">
-  <div class="column is-mobile">
+<div class="columns is-desktop is-multiline">
+  <div class="column is-full-mobile">
+    <figure class="image is-square">
     <img class="pubImage" src='<%= pub.image %>' alt='<%= pub.title %>' />
+  </figure>
   </div>
-  <div class="column is-mobile">
+  <div class="column">
     <% if(locals.user.id === pub.creator.id){ %>
       <a href="/pubs/<%= pub.id %>/edit">Edit</a>
       <ul>

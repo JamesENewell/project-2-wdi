@@ -26,7 +26,7 @@ router.route('/pubs/new')
   .get(pubs.new);
 router.route('/pubs/:id')
   .get(pubs.show)
-  .put(pubs.update)
+  .post(pubs.update)
   .delete(pubs.delete);
 router.route('/pubs/:id/edit')
   .get(pubs.edit);

@@ -3,24 +3,23 @@ div.top-bar {
   padding: 20px;
   text-decoration: underline; }
 
-div.column {
+.column {
   padding: 30px; }
 
 h2 {
-  padding: 20px 0 0 20px;
-  font-size: 50px; }
+  font-size: 50px;
+  padding: 20px 0 0 20px; }
 
 form.newPub {
+  border: 1px solid black;
   margin: 20px 100px 20px 100px;
-  padding: 20px 0 10px 20px;
-  border: 1px solid black; }
+  padding: 20px 0 10px 20px; }
 
 form.newPub input {
   border: 1px solid grey;
-  width: 500px;
   display: inline-block;
-  float: right;
-  margin: 0 50px 0 0; }
+  margin: 0 50px 0 0;
+  width: 500px; }
 
 button {
   border: 1px solid grey; }
@@ -35,29 +34,27 @@ img.pubImage {
   border: 1px solid black; }
 
 .navbar-item {
-  float: center;
   text-align: justify; }
 
 .top-bar {
   text-align: center; }
-
-.top-bar li {
-  font-size: 50px; }
+  .top-bar li {
+    font-size: 50px; }
 
 a.navbar-item {
   padding-top: 20px;
   height: 50px;
   width: 100px; }
 
-img.image.is-200x150 {
+.image.is-200x150 {
   height: 400px;
   width: 150px; }
 
 .homeImage {
-  height: 1000px;
   background-image: url(https://www.visit-hampshire.co.uk/imageresizer/?image=%2Fdbimgs%2FPubs%20Banner%203.jpg&action=LargeImageGallery);
-  background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1000px; }
 
 /*# sourceMappingURL=style.css.map */
