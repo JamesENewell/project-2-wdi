@@ -17,7 +17,7 @@
   <div class="navbar-menu" id="navMenu">
     <div class="navbar-start">
       <% if(locals.isLoggedIn){%>
-        <a href="/" class="navbar-item"><%= locals.user.username.toUpperCase() %></a>
+        <a href="/" class="navbar-item"><%= (locals.user.username.charAt(0).toUpperCase() + locals.user.username.slice(1))%></a>
         <% } %>
     </div>
     <div class="navbar-end">
