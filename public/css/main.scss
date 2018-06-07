@@ -59,7 +59,8 @@ img.pubImage {
 }
 
 a.navbar-item {
-  height: 100px;
+  padding-top: 20px;
+  height: 50px;
   width: 100px;
 }
 
@@ -74,5 +75,4 @@ img.image.is-200x150 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  // background-size: cover;
 }

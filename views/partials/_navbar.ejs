@@ -15,6 +15,11 @@
   </div>
 
   <div class="navbar-menu" id="navMenu">
+    <div class="navbar-start">
+      <% if(locals.isLoggedIn){%>
+        <a href="/" class="navbar-item"><%= locals.user.username.toUpperCase() %></a>
+        <% } %>
+    </div>
     <div class="navbar-end">
       <% if(locals.isLoggedIn){ %>
       <a href="/pubs" class="navbar-item">All Pubs</a>

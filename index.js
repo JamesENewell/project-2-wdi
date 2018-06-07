@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const session = require('express-session');
+const methodOverride = require('method-override');
 const expressLayouts = require('express-ejs-layouts');
 const app = express();
 
@@ -20,6 +21,14 @@ app.use(expressLayouts);
 app.use(express.static(`${__dirname}/public`));
 
 app.use(morgan('dev'));
+
+app.use(methodOverride((req)=> {
+  if(req.body && typeof req.body ==='object' && '_method' in req.body){
+    const method = req.body._method;
+    delete req.body._method;
+    return method;
+  }
+}));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 

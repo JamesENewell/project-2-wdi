@@ -1,10 +1,19 @@
 <h2 id="pub-title"> <%= pub.title %></h2>
-<div class="columns">
-  <div class="column is-half">
+<div class="columns is-mobile">
+  <div class="column is-mobile">
     <img class="pubImage" src='<%= pub.image %>' alt='<%= pub.title %>' />
   </div>
-  <div class="column is-half">
-    <a href="/pubs/<%= pub.id %>/edit">Edit</a>
+  <div class="column is-mobile">
+    <% if(locals.user.id === pub.creator.id){ %>
+      <a href="/pubs/<%= pub.id %>/edit">Edit</a>
+      <ul>
+      <h5>Location</h5>
+      <li><%= pub.location %></li>
+      <h5>Description</h5>
+      <li><%= pub.description %></li>
+      <h5>Reviews</h5>
+      <ul>
+      <%} else { %>
     <ul>
     <h5>Location</h5>
     <li><%= pub.location %></li>
@@ -12,8 +21,9 @@
     <li><%= pub.description %></li>
     <h5>Reviews</h5>
     <ul>
+    <% } %>
     <% pub.comments.forEach((comment) => { %>
-      <li><%= locals.user.username %>: <%= comment.content %></li>
+      <li><%= comment.user.username %>: <%= comment.content %></li>
     <% }) %>
   </ul>
     </ul>
@@ -21,6 +31,5 @@
       <textarea name="content" rows="8" cols="60"></textarea>
       <button name="button">Post a review</button>
     </form>
-
     </div>
   </div>

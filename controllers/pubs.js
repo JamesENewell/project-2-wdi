@@ -14,6 +14,8 @@ function indexRoute(req, res){
 function showRoute(req, res){
   Pub
     .findById(req.params.id)
+    .populate('creator')
+    .populate('comments.user')
     .exec()
     .then( pub =>{
       res.render('pubs/show', {pub});
@@ -46,10 +48,12 @@ function editRoute(req, res){
     });
 }
 function updateRoute(req, res){
+  console.log(req.body);
   Pub
     .findById(req.params.id)
-    .update(req.body)
     .then( pub =>{
+      Object.assign(pub, req.body);
+      pub.save();
       return res.redirect(`/pubs/${pub.id}`);
     });
 }
@@ -68,7 +72,7 @@ function createCommentRoute(req, res){
     .exec()
     .then( pub => {
       const commentData = req.body;
-      commentData.user = res.locals.user.id;
+      commentData.user = res.locals.currentUser.id;
       pub.comments.push(commentData);
       pub.save();
       return res. redirect(`/pubs/${pub.id}`);

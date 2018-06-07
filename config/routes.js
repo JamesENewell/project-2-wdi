@@ -1,6 +1,5 @@
 const express  = require("express");
 const router   = express.Router();
-
 const static = require('../controllers/static');
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
@@ -16,7 +15,6 @@ router.route('/register')
 router.route('/login')
   .get(sessions.new)
   .post(sessions.create);
-
 
 router.route('/logout')
   .get(sessions.delete);
