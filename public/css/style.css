@@ -42,19 +42,24 @@ img.pubImage {
     font-size: 50px; }
 
 a.navbar-item {
-  padding-top: 20px;
   height: 50px;
-  width: 100px; }
+  padding-top: 20px;
+  width: 100px;
+}
 
 .image.is-200x150 {
   height: 400px;
   width: 150px; }
 
-.homeImage {
+body {
   background-image: url(https://www.visit-hampshire.co.uk/imageresizer/?image=%2Fdbimgs%2FPubs%20Banner%203.jpg&action=LargeImageGallery);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 1000px; }
+
+.card-content {
+  border: 1px solid grey;
+}
 
 /*# sourceMappingURL=style.css.map */
