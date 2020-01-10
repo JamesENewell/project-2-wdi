@@ -51,12 +51,12 @@ a.navbar-item {
   height: 400px;
   width: 150px; }
 
-body {
+/* body {
   background-image: url(https://www.visit-hampshire.co.uk/imageresizer/?image=%2Fdbimgs%2FPubs%20Banner%203.jpg&action=LargeImageGallery);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 1000px; }
+  height: 1000px; } */
 
 .card-content {
   border: 1px solid grey;

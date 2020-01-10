@@ -1,7 +1,7 @@
 <nav class="navbar" style="height = 100px;" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
-      <img src="https://d1iyvc6w63ago2.cloudfront.net/preview/width/1068/1d7c5768f7db7898fbea/fraud-pint-glass-padded.png" class= "image is-200x150" alt="PubReviewer">
+      <img src="https://d1iyvc6w63ago2.cloudfront.net/preview/width/1068/1d7c5768f7db7898fbea/fraud-pint-glass-padded.png" class= "image is-200x150" alt="PubReviewer"/>
     </a>
 
     <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
@@ -21,9 +21,11 @@
         <% } %>
     </div>
     <div class="navbar-end">
-      <% if(locals.isLoggedIn){ %>
-      <a href="/pubs" class="navbar-item">All Pubs</a>
+      <% if (locals.landlord === true){ %>
       <a href="/pubs/new" class="navbar-item">Add a pub</a>
+      <%} else if(locals.isLoggedIn){ %>
+      <a href="/pubs" class="navbar-item">All Pubs</a>
+
       <a href="/logout" class="navbar-item">Logout</a>
       <%} else {%>
       <a href="/login" class="navbar-item">Login</a>

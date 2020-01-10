@@ -5,35 +5,44 @@ const { dbURI } = require('../config/environment');
 const User = require('../models/user');
 const Pub = require('../models/pub');
 
-mongoose.connect(dbURI, (err, db) => {
+mongoose.connect(dbURI, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true
+},  (err, db) => {
   db.dropDatabase();
 
   User.create([{
     username: 'JamesTest',
     email: 'jn@test.com',
     password: 'test',
-    passwordConfirmation: 'test'
+    passwordConfirmation: 'test',
+    landlord: true
   },{
     username: 'MayaTest',
     email: 'mv@test.com',
     password: 'test',
-    passwordConfirmation: 'test'
+    passwordConfirmation: 'test',
+    landlord: false
   },
   {
     username: 'RalphTest',
     email: 'rf@test.com',
     password: 'test',
-    passwordConfirmation: 'test'
+    passwordConfirmation: 'test',
+    landlord: false
   },{
     username: 'SimonTest',
     email: 'sw@test.com',
     password: 'test',
-    passwordConfirmation: 'test'
+    passwordConfirmation: 'test',
+    landlord: false
   },{
     username: 'GaryTest',
     email: 'gw@test.com',
     password: 'test',
-    passwordConfirmation: 'test'
+    passwordConfirmation: 'test',
+    landlord: true
   }])
     .then(users => {
       console.log(`${users.length} User(s) created`);

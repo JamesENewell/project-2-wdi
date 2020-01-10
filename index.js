@@ -12,7 +12,11 @@ const routes = require('./config/routes');
 const User = require('./models/user');
 const { port, dbURI } = require('./config/environment');
 
-mongoose.connect(dbURI);
+mongoose.connect(dbURI, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true
+});
 
 app.set('view engine', 'ejs');
 app.set('views', `${__dirname}/views`);
@@ -45,10 +49,12 @@ app.use((req, res, next) => {
   User
     .findById(req.session.userId)
     .populate({path: 'pubs', populate: {path: 'creator'}})
+    // .populate({path: 'landlord'})
     .exec()
     .then((user) =>{
       res.locals.user = user;
       res.locals.isLoggedIn = true;
+      res.locals.landlord = false;
       next();
     });
 
